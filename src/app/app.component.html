@@ -51,10 +51,14 @@
     </p>
     <div class="clubhouse_invitation_dropdown">
       <div class="clubhouse_invitation_dropdown_1">
-        <h3>
-          Вариант 1:
-        </h3>
-        <div class="clubhouse_invitation_dropdown_1_p">
+<!--          зделай такой класс и сюда (click) перенеси-->
+          <div class="clubhouse_invitation_dropdown_1_header">
+              <h3 (click)="showVariant1 = !showVariant1">
+                  <a>Вариант 1:</a>
+              </h3>
+          </div>
+
+        <div class="clubhouse_invitation_dropdown_1_p" [style]="showVariant1 ? '' : 'display: none'">
           Получить приглашение от знакомого, кто уже является пользователем Clubhouse. Это будет сделать проще, если у вас есть знакомые в США, так как основная часть аудитории — в Америке.
           Ограничение для варианта 1:
 
@@ -62,10 +66,12 @@
         </div>
       </div>
       <div class="clubhouse_invitation_dropdown_1">
-        <h3>
-          Вариант 2:
-        </h3>
-        <div class="clubhouse_invitation_dropdown_1_p">
+          <div class="clubhouse_invitation_dropdown_1_header">
+              <h3 (click)="showVariant2 = !showVariant2">
+                  <a>Вариант 2:</a>
+              </h3>
+          </div>
+        <div class="clubhouse_invitation_dropdown_1_p" [style]="showVariant2 ? '' : 'display: none'">
           Зарегистрироваться в приложении и ждать, пока вас пустят. Но неизвестно, когда вы дождётесь, потому что платформа оставляет за собой возможность добавлять новых пользователей без ограничений по времени.
         </div>
       </div>
