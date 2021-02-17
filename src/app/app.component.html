@@ -17,7 +17,7 @@
       </a></li>
       <li><a href="#clubhouse_invitation">Как попасть в Clubhouse?</a></li>
       <li><a href="#functions">Функционал</a></li>
-      <li><a href="#register">Регистрация</a></li>
+      <li><a href="#payment">Регистрация</a></li>
     </ul>
   </nav>
 
@@ -202,7 +202,7 @@ nightlife
     </div>
   </section>
 
-  <section class="payment" *ngIf="!loading && !showRequisites">
+  <section class="payment" *ngIf="!loading && !showRequisites" id="payment">
     <input type="text" name="acc_name" id="acc_name" value="@"><label for="acc_name" >Имя Аккаунта</label>
     <input type="text" name="tel_num" id="tel_num"><label for="tel_num">Номер телефона</label>
     <button (click)="goToPayment()">
