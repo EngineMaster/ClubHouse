@@ -1,7 +1,7 @@
 $font-stack: 'Hind', sans-serif
 html
   padding: 0
-  margin: 0!important
+  margin: 0
   scroll-behavior: smooth
 
 *
@@ -11,13 +11,14 @@ body
   font-family: $font-stack
   padding: 0
   margin: 0!important
+  background-color: #E7E4D5
 
 
 .nav
   display: flex
   justify-content: space-between
   align-items: center
-  background-color: #E5CF7B
+  border-bottom: 2px solid #D2CEC6
   padding: 20px
   &_p
     font-size: 35px
@@ -45,53 +46,90 @@ body
   width: 90%
   margin: 0 auto
   padding: 15px
-  background-color: #F9E593
+  background-color: white
   margin-top: 20px
+  border-radius: 8px
+  &_text
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+
+
 
 .clubhouse_invitation
   width: 90%
   margin:  0 auto
   padding: 15px
+  text-align: center
+  border-bottom: 2px solid #D2CEC6
   &_dropdown
     display: flex
     justify-content: space-around
     &_1
-      background-color: #E5CF7B
+      background: #5A739E
       margin: 5px
-      width: 50%
+      width: 350px
+      margin: 0 auto
+      cursor: pointer
+      border-radius: 5px
+      z-index: 2
+      &_header
+          border-radius: 100px
+          color: #ffffff
+          font-weight: 100
       h3
         text-align: center
       &_p
-        background-color: #6E76AB
-        height: 200px
+        min-height: 340px
+        padding: 20px
+        border-radius: 5px
+        background: #FFFFFF
+        margin: 0 auto
+        font-size: 15px
+        z-index: 1
 
 .functions
-  width: 90%
+  width: 80%
   margin: 0 auto
+  text-align: center
+  font-size: 28px
+  border-bottom: 2px solid #D2CEC6
+  padding: 15px
   &_wrap
     display: grid
-    background-color: #3A4072
-    grid-template-columns: repeat(2,50%)
+    grid-template-columns: repeat(2, 45%)
+    grid-column-gap: 10%
+    grid-row-gap: 50px
     &_card
       display: flex
       flex-direction: column
-      padding: 5px
+      padding: 20px
       justify-content: space-around
       text-align: center
-      color: white
+      color: black
       font-size: 15px
       font-family: $font-stack
       font-weight: 300
-      border-radius: 10px
-      background-color: #6E76AB
+      border-radius: 60px
+      background-color: white
       margin: 10px
       &_text
-        height: 150px
         padding: 10px
+
+
 
 .register
   width: 90%
   margin: 0 auto
+  text-align: center
+  background-color: white
+  padding: 20px
+  border-radius: 10px
+  margin-top: 10px
+  h4
+      font-size: 29px
+      font-weight: 600
+      color: #5A739E
   &_fr
     display: flex
     justify-content: space-around
@@ -102,7 +140,7 @@ body
       flex-direction: column
       align-items: center
       justify-content: space-around
-      background-color: #F9E593
+      background-color: #E7E4D5
       height: 300px
       width: 50%
       margin: 5px
@@ -116,7 +154,7 @@ body
       flex-direction: column
       align-items: center
       justify-content: space-around
-      background-color: #F9E593
+      background-color: #E7E4D5
       height: 300px
       width: 50%
       margin: 5px

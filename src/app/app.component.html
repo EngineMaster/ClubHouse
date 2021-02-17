@@ -15,9 +15,9 @@
       <li><a href="#description">
         Что такое ClubHouse?
       </a></li>
-      <li><a href="#clubhouse_invitation">Как попасть в Clubhouse?</a></li>
+      <li><a href="#clubhouse_invitation" >Как попасть в Clubhouse?</a></li>
       <li><a href="#functions">Функционал</a></li>
-      <li><a href="#payment">Регистрация</a></li>
+      <li><a href="#payment" (click)="scrollToElement(payment)">Регистрация</a></li>
     </ul>
   </nav>
 
@@ -26,16 +26,16 @@
         <h1>
           Что такое ClubHouse?
         </h1>
-          <p>
-            ClubHouse — новая социальная есть, где можно только слушать или говорить.
+      <p>
+        ClubHouse — новая социальная есть, где можно только слушать или говорить.
 
-            Уже сейчас в США эта соцсеть стоит на 7-ом месте в AppStore в разделе «Социальные медиа», а Интернет разрывается от сообщений: «А скиньте инвайт в клабхауз».
+        Уже сейчас в США эта соцсеть стоит на 7-ом месте в AppStore в разделе «Социальные медиа», а Интернет разрывается от сообщений: «А скиньте инвайт в клабхауз».
 
-            Посмотрите на динамику роста:
+        Посмотрите на динамику роста:
 
-            в декабре 2020 года — 600 000 пользователей
-            в начале февраля 2021 года — 2 400 000 активных пользователей (по данным американского журнала Adweek).
-          </p>
+        в декабре 2020 года — 600 000 пользователей
+        в начале февраля 2021 года — 2 400 000 активных пользователей (по данным американского журнала Adweek).
+      </p>
     </div>
     <div class="description_image">
         <img src="https://sun9-29.userapi.com/impf/o3tRW1f4kk77-6tGLgERGcwfXWNTBto53jA87g/MNLQ1jTM4A0.jpg?size=750x511&quality=96&proxy=1&sign=6dcb248e847244a85cf3dd514a5c2dc6&type=album" alt="">
@@ -43,7 +43,7 @@
   </section>
 
   <section class="clubhouse_invitation" id="clubhouse_invitation">
-      <h2 (click)="scrollToElement(payment)">Как попасть в Clubhouse?</h2>
+      <h2 >Как попасть в Clubhouse?</h2>
     <p>
       Главное условие: у вас должен быть iOS. Я думаю, что если сервис крепко займёт своё место в мире соцсетей, то и для Android он станет доступен.
 
@@ -65,6 +65,7 @@
           при попадании в сервис пользователю дают только 2 приглашения. Т. е. приглашения он может отправить лишь 2 своим друзьям. Но через время Clubhouse даёт ещё несколько приглашений.
         </div>
       </div>
+
       <div class="clubhouse_invitation_dropdown_1">
           <div class="clubhouse_invitation_dropdown_1_header">
               <h3 (click)="showVariant2 = !showVariant2">
@@ -86,7 +87,7 @@
     <div class="functions_wrap">
       <div class="functions_wrap_card">
         <div class="functions_wrap_card_logo">
-          <span class="material-icons">
+          <span class="material-icons" style="font-size: 60px">
             question_answer
             </span>
         </div>
@@ -94,7 +95,7 @@
       </div>
       <div class="functions_wrap_card">
         <div class="functions_wrap_card_logo">
-                  <span class="material-icons">
+                  <span class="material-icons" style="font-size: 60px">
         hearing
         </span>
         </div>
@@ -102,7 +103,7 @@
       </div>
       <div class="functions_wrap_card">
         <div class="functions_wrap_card_logo">
-          <span class="material-icons">
+          <span class="material-icons" style="font-size: 60px">
           video_label
           </span>
         </div>
@@ -110,7 +111,7 @@
       </div>
       <div class="functions_wrap_card">
         <div class="functions_wrap_card_logo">
-                      <span class="material-icons">
+                      <span class="material-icons" style="font-size: 60px">
             accessibility
             </span>
         </div>
@@ -118,7 +119,7 @@
       </div>
       <div class="functions_wrap_card">
         <div class="functions_wrap_card_logo">
-          <span class="material-icons">
+          <span class="material-icons" style="font-size: 60px">
 textsms
 </span>
         </div>
@@ -126,8 +127,8 @@ textsms
       </div>
 
       <div class="functions_wrap_card">
-        <div class="functions_wrap_card_logo">
-          <span class="material-icons">
+        <div class="functions_wrap_card_logo" >
+          <span class="material-icons" style="font-size: 60px">
 textsms
 </span>
         </div>
@@ -146,10 +147,13 @@ textsms
 
       Мы создали сеть аккаунтов, связанных между собой и с помощью них высылаем приглашения всем желающим за сумму, гораздо более низкую, чем предлагают другие предприимчивые пользователи Ebay.
     </p>
+      <h4>
+          Алгоритм регистрации
+      </h4>
     <div class="register_fr">
       <div class="register_fr_card">
         <div class="register_fr_card_logo">
-          <span class="material-icons" style="color: green; font-size: 80px">
+          <span class="material-icons" style="color: #5A739E; font-size: 80px">
           download
           </span>
         </div>
@@ -159,7 +163,7 @@ textsms
       </div>
       <div class="register_fr_card">
         <div class="register_fr_card_logo">
-          <span class="material-icons" style="color: green; font-size: 80px">
+          <span class="material-icons" style="color: #5A739E; font-size: 80px">
         how_to_reg
         </span>
         </div>
@@ -171,7 +175,7 @@ textsms
     <div class="register_sr">
       <div class="register_sr_card">
         <div class="register_sr_card_logo">
-<span class="material-icons" style="color: green; font-size: 80px">
+<span class="material-icons" style="color: #5A739E; font-size: 80px">
 shopping_cart
 </span>
         </div>
@@ -181,7 +185,7 @@ shopping_cart
       </div>
       <div class="register_sr_card">
         <div class="register_sr_card_logo">
-<span class="material-icons" style="color: green; font-size: 80px">
+<span class="material-icons" style="color: #5A739E; font-size: 80px">
 settings_cell
 </span>
         </div>
@@ -191,7 +195,7 @@ settings_cell
       </div>
       <div class="register_sr_card">
         <div class="register_sr_card_logo">
-<span class="material-icons" style="color: green; font-size: 80px">
+<span class="material-icons" style="color: #5A739E; font-size: 80px">
 nightlife
 </span>
         </div>
@@ -202,15 +206,7 @@ nightlife
     </div>
   </section>
 
-<<<<<<< HEAD
-  <section class="payment" *ngIf="!loading && !showRequisites" id="payment">
-    <input type="text" name="acc_name" id="acc_name" value="@"><label for="acc_name" >Имя Аккаунта</label>
-    <input type="text" name="tel_num" id="tel_num"><label for="tel_num">Номер телефона</label>
-    <button (click)="goToPayment()">
-      Перейти к оплате
-    </button>
-  </section>
-=======
+
   <div #payment>
       <section class="payment" *ngIf="!loading && !showRequisites">
           <input type="text" name="acc_name" id="acc_name" value="@"><label for="acc_name" >Имя Аккаунта</label>
@@ -221,11 +217,10 @@ nightlife
       </section>
   </div>
 
->>>>>>> 35f5c992d573f021cb922acb69e1c1d3720c4120
 
   <div *ngIf="loading">Подождите, происходит запрос на получение реквизитов для оплаты. Обычно это занимает до минуты.</div>
   <div *ngIf="showRequisites">
-      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате "{{code}}. После оплаты вам придёт СМС с кодом приглашения.
+      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате {{code}}. После оплаты вам придёт СМС с кодом приглашения.
   </div>
 </body>
 </html>
