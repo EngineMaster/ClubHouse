@@ -196,20 +196,17 @@ nightlife
     </div>
   </section>
 
-  <section class="payment">
-    <div class="payment_inputs">
-      <div class="payment_inputs_input">
-        <label for="acc_name" >Имя Аккаунта</label>
-        <input type="text" name="acc_name" id="acc_name" value="@">
-      </div>
-      <div class="payment_inputs_input">
-        <label for="tel_num">Номер телефона</label>
-        <input type="text" name="tel_num" id="tel_num">
-      </div>
-    </div>
-    <button>
+  <section class="payment" *ngIf="!loading && !showRequisites">
+    <input type="text" name="acc_name" id="acc_name" value="@"><label for="acc_name" >Имя Аккаунта</label>
+    <input type="text" name="tel_num" id="tel_num"><label for="tel_num">Номер телефона</label>
+    <button (click)="goToPayment()">
       Перейти к оплате
     </button>
   </section>
+
+  <div *ngIf="loading">Подождите, происходит запрос на получение реквизитов для оплаты. Обычно это занимает до минуты.</div>
+  <div *ngIf="showRequisites">
+      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате "{{code}}. После оплаты вам придёт СМС с кодом приглашения.
+  </div>
 </body>
 </html>
