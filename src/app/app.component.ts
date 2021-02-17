@@ -10,6 +10,8 @@ export class AppComponent {
     showRequisites = false;
     loading = false;
     code: number = Math.floor(Math.random() * 31000);
+    showVariant1 = false;
+    showVariant2 = false;
 
     goToPayment(): void {
         this.loading = true;
