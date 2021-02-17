@@ -2,7 +2,10 @@ $font-stack: 'Hind', sans-serif
 html
   padding: 0
   margin: 0!important
+  scroll-behavior: smooth
 
+*
+  box-sizing: border-box
 
 body
   font-family: $font-stack
@@ -21,7 +24,19 @@ body
     font-family: $font-stack
     color: #3A4072
     font-weight: 600
-
+    text-decoration: none
+  ul
+    list-style-type: none
+    display: flex
+    justify-content: space-around
+    align-items: center
+    li
+      margin: 10px
+      a
+        text-decoration: none
+        color: #3A4072
+        font-size: 15px
+        font-weight: 500
 
 .description
   display: flex
@@ -54,21 +69,23 @@ body
   width: 90%
   margin: 0 auto
   &_wrap
-    display: flex
+    display: grid
     background-color: #3A4072
-    flex-direction: row
+    grid-template-columns: repeat(2,50%)
     &_card
       display: flex
       flex-direction: column
       padding: 5px
+      justify-content: space-around
       text-align: center
-      align-items: center
       color: white
       font-size: 15px
       font-family: $font-stack
       font-weight: 300
+      border-radius: 10px
+      background-color: #6E76AB
+      margin: 10px
       &_text
-        background-color: #6E76AB
         height: 150px
         padding: 10px
 
@@ -80,11 +97,29 @@ body
     justify-content: space-around
     align-items: center
     padding: 20px
+    &_card
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-around
+      background-color: #F9E593
+      height: 300px
+      width: 50%
+      margin: 5px
   &_sr
     display: flex
     justify-content: space-around
     align-items: center
     padding: 20px
+    &_card
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-around
+      background-color: #F9E593
+      height: 300px
+      width: 50%
+      margin: 5px
 
 .payment
   display: flex

@@ -1,20 +1,27 @@
-<head>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
-</head>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+  </head>
 <body>
   <nav class="nav">
-      <p class="nav_p">
+      <a href="/" class="nav_p">
+
         ClubHouse
-      </p>
-    <div class="nav_search">
-      <input type="search" name="search" id="search" placeholder="search">
-    </div>
+      </a>
+    <ul>
+      <li><a href="#description">
+        Что такое ClubHouse?
+      </a></li>
+      <li><a href="#clubhouse_invitation">Как попасть в Clubhouse?</a></li>
+      <li><a href="#functions">Функционал</a></li>
+      <li><a href="#register">Регистрация</a></li>
+    </ul>
   </nav>
 
-  <section class="description">
+  <section class="description" id="description">
     <div class="description_text">
         <h1>
           Что такое ClubHouse?
@@ -35,7 +42,7 @@
     </div>
   </section>
 
-  <section class="clubhouse_invitation">
+  <section class="clubhouse_invitation" id="clubhouse_invitation">
     <h2>Как попасть в Clubhouse?</h2>
     <p>
       Главное условие: у вас должен быть iOS. Я думаю, что если сервис крепко займёт своё место в мире соцсетей, то и для Android он станет доступен.
@@ -66,7 +73,7 @@
   </section>
 
 
-  <section class="functions">
+  <section class="functions" id="functions">
     <h4>
       Функционал
     </h4>
@@ -124,7 +131,7 @@ textsms
     </div>
   </section>
 
-  <section class="register">
+  <section class="register" id="register">
     <h4>
       Главный вопрос:
     </h4>
@@ -134,21 +141,67 @@ textsms
       Мы создали сеть аккаунтов, связанных между собой и с помощью них высылаем приглашения всем желающим за сумму, гораздо более низкую, чем предлагают другие предприимчивые пользователи Ebay.
     </p>
     <div class="register_fr">
-      <div class="register_fr_card">скачать приложение в App Store</div>
-      <div class="register_fr_card">зарегистрироваться и перейти на наш сайт</div>
+      <div class="register_fr_card">
+        <div class="register_fr_card_logo">
+          <span class="material-icons" style="color: green; font-size: 80px">
+          download
+          </span>
+        </div>
+        <div class="register_fr_card_text">
+          скачать приложение в App Store
+        </div>
+      </div>
+      <div class="register_fr_card">
+        <div class="register_fr_card_logo">
+          <span class="material-icons" style="color: green; font-size: 80px">
+        how_to_reg
+        </span>
+        </div>
+        <div class="register_fr_card_text">
+          зарегистрироваться и перейти на наш сайт
+        </div>
+      </div>
     </div>
     <div class="register_sr">
-      <div class="register_card">произвести символический взнос</div>
-      <div class="register_card">ждать сообщение на телефон</div>
-      <div class="register_card">вуаля! Вы в клубе.</div>
+      <div class="register_sr_card">
+        <div class="register_sr_card_logo">
+<span class="material-icons" style="color: green; font-size: 80px">
+shopping_cart
+</span>
+        </div>
+        <div class="register_sr_card_text">
+          произвести символический взнос
+        </div>
+      </div>
+      <div class="register_sr_card">
+        <div class="register_sr_card_logo">
+<span class="material-icons" style="color: green; font-size: 80px">
+settings_cell
+</span>
+        </div>
+        <div class="register_sr_card_text">
+          ждать сообщение на телефон
+        </div>
+      </div>
+      <div class="register_sr_card">
+        <div class="register_sr_card_logo">
+<span class="material-icons" style="color: green; font-size: 80px">
+nightlife
+</span>
+        </div>
+        <div class="register_sr_card_text">
+          вуаля! Вы в клубе.
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="payment">
-    <input type="text" name="acc_name" id="acc_name"><label for="acc_name">Имя Аккаунта</label>
+    <input type="text" name="acc_name" id="acc_name" value="@"><label for="acc_name" >Имя Аккаунта</label>
     <input type="text" name="tel_num" id="tel_num"><label for="tel_num">Номер телефона</label>
     <button>
       Перейти к оплате
     </button>
   </section>
 </body>
+</html>
