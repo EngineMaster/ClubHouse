@@ -20,4 +20,8 @@ export class AppComponent {
             this.showRequisites = true;
         }, 3000);
     }
+
+    scrollToElement($element): void {
+        $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+    }
 }
