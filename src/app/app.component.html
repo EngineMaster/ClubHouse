@@ -203,13 +203,31 @@ nightlife
   </section>
 
   <div #payment>
-      <section class="payment" *ngIf="!loading && !showRequisites">
-          <input type="text" name="acc_name" id="acc_name" value="@"><label for="acc_name" >Имя Аккаунта</label>
-          <input type="text" name="tel_num" id="tel_num"><label for="tel_num">Номер телефона</label>
-          <button (click)="goToPayment()">
-              Перейти к оплате
-          </button>
-      </section>
+      <form [formGroup]="form">
+          <section class="payment" *ngIf="!loading && !showRequisites">
+              <label for="acc_name">Имя Аккаунта</label>
+              <input formControlName="username" id="acc_name">
+              <div *ngIf="form.get('username').invalid && form.get('username').touched">
+                  Укажите корректный никнейм. Используйте латиницу и цифры (от 5 символов)
+              </div>
+
+              <label for="tel_num">Номер телефона</label>
+              <input [textMask]="phoneMask" formControlName="phone" id="tel_num">
+              <div *ngIf="form.get('phone').invalid && form.get('phone').touched">
+                  Укажите корректный номер телефона
+              </div>
+
+              <label for="agree">Даю согласие на обработку персональных данных</label>
+              <input type="checkbox" formControlName="agree" id="agree">
+              <div *ngIf="form.get('agree').invalid && form.get('agree').touched">
+                  Необходимо ваше согласие на обработку персональных данных
+              </div>
+
+              <button (click)="goToPayment()" [disabled]="form.invalid">
+                  Перейти к оплате
+              </button>
+          </section>
+      </form>
   </div>
 
 
