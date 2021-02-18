@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page.component.sass']
 })
 export class PageComponent implements OnInit {
-
+    code = 1459;
   constructor() { }
 
   ngOnInit(): void {
