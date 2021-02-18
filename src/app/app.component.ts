@@ -16,7 +16,7 @@ export class AppComponent {
     title = 'Clubhouse';
     showRequisites = false;
     loading = false;
-    code: number = Math.floor(Math.random() * 31000);
+    code: number = Math.floor(Math.random() * 10000);
     showVariant1 = false;
     showVariant2 = false;
     form = this.buildForm();
@@ -29,7 +29,7 @@ export class AppComponent {
         }, 3000);
     }
 
-    scrollToElement($element): void {
+    scrollToElement($element: any): void {
         $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
     }
 
