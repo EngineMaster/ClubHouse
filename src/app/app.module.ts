@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextMaskModule } from 'angular2-text-mask';
 import { PageComponent } from './page/page.component';
+import { MainPageComponent } from './component/main-page/main-page.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        PageComponent
+        PageComponent,
+        MainPageComponent
     ],
     imports: [
         BrowserModule,
