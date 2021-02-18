@@ -58,4 +58,20 @@ export class AppComponent {
         const isValid = regexp.test(control.value);
         return isValid ? null : { letter: 'Недопустимые символы. Пожалуйста, используйте английские буквы или цифры' };
     }
+
+    navSlide(): void {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav_links');
+        const navLinks = document.querySelector('.nav_links li');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+        });
+        Array.from(navLinks).forEach((link, index) => {
+            link.style.animation = `navLinksFade 0.5s ease forwards ${index / 7 + 0.5} s`;
+        });
+        burger.classList.toggle('toggle');
+    }
+
+
 }

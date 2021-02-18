@@ -4,6 +4,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   </head>
 <body>
   <nav class="nav">
@@ -11,7 +12,7 @@
 
         ClubHouse
       </a>
-    <ul>
+    <ul class="nav_links">
       <li><a (click)="scrollToElement(description)">
         Что такое ClubHouse?
       </a></li>
@@ -19,7 +20,7 @@
       <li><a (click)="scrollToElement(functions)">Функционал</a></li>
       <li><a (click)="scrollToElement(payment)">Регистрация</a></li>
     </ul>
-      <div class="burger">
+      <div class="burger" (click)="navSlide()">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
@@ -254,5 +255,6 @@ nightlife
   <div *ngIf="showRequisites">
       Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате {{code}}. После оплаты Вам придёт СМС с кодом приглашения.
   </div>
+
 </body>
 </html>

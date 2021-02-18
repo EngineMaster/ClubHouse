@@ -29,13 +29,14 @@ body
   align-items: center
   border-bottom: 2px solid #D2CEC6
   padding: 20px
+  max-height: 10vh
   &_p
     font-size: 35px
     font-family: $font-stack
     color: #3A4072
     font-weight: 600
     text-decoration: none
-  ul
+  &_links
     list-style-type: none
     display: flex
     justify-content: space-around
@@ -46,16 +47,19 @@ body
     @media screen and (max-width: 768px)
         position: absolute
         right: 0
-        height: 100vh
-        top: 0
+        height: 92vh
+        top: 8vh
         display: flex
         flex-direction: column
         align-items: center
         background-color: #5A739E
         width: 100%
         transform: translateX(100%)
+        transition: 0.4s ease-in
     li
       margin: 10px
+      @media screen and (max-width: 768px)
+          opacity: 0
       a
         text-decoration: none
         color: #3A4072
@@ -66,13 +70,15 @@ body
 
 .burger
     display: none
-    @media screen and (max-width: 1024px)
+    @media screen and (max-width: 768px)
         display: block
+        cursor: pointer
     div
         width: 25px
         height: 5px
         background-color: white
         margin: 5px
+        transition: 0.3s ease
 
 .description
   display: flex
@@ -143,6 +149,8 @@ body
     grid-template-columns: repeat(2, 45%)
     grid-column-gap: 10%
     grid-row-gap: 50px
+    @media screen and (max-width: 1024px)
+        grid-template-columns: 1fr
     &_card
       display: flex
       flex-direction: column
@@ -178,6 +186,8 @@ body
     justify-content: space-around
     align-items: center
     padding: 20px
+    @media screen and (max-width: 768px)
+        flex-direction: column
     &_card
       display: flex
       flex-direction: column
@@ -187,11 +197,15 @@ body
       height: 300px
       width: 50%
       margin: 5px
+      @media screen and (max-width: 768px)
+          width: 90%
   &_sr
     display: flex
     justify-content: space-around
     align-items: center
     padding: 20px
+    @media screen and (max-width: 768px)
+        flex-direction: column
     &_card
       display: flex
       flex-direction: column
@@ -201,6 +215,8 @@ body
       height: 300px
       width: 50%
       margin: 5px
+      @media screen and (max-width: 768px)
+          width: 90%
 
 #pay_me
     text-align: center
@@ -228,3 +244,23 @@ body
             border-radius: 100px
             width: 50%
 
+.nav-active
+    transform: translateX(0%)
+
+
+@keyframes navLinkFade
+    0%
+        opacity: 0
+        transform: translateX(50px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+.toggle .line1
+    transform: rotate(-45deg) translate(-5px, 6px)
+
+.toggle .line2
+    opacity: 0
+
+.toggle .line3
+    transform: rotate(45deg) translate(-5px, -6px)
