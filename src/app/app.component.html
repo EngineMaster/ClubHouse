@@ -259,7 +259,7 @@ nightlife
   </div>
   <div *ngIf="showRequisites" class="await">
       Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате "{{code}}" . После оплаты Вам придёт СМС с кодом приглашения. <div class="loader"></div>
-  <button>
+  <button (click)="goToPage()">
       Я оплатил
   </button>
 

@@ -77,5 +77,9 @@ export class AppComponent {
         this.navSlide();
     }
 
+    goToPage(): void{
+        window()
+    }
+
 
 }
