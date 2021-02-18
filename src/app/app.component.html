@@ -12,12 +12,12 @@
         ClubHouse
       </a>
     <ul>
-      <li><a href="#description">
+      <li><a (click)="scrollToElement(description)">
         Что такое ClubHouse?
       </a></li>
-      <li><a href="#clubhouse_invitation" (click)="scrollToElement(clubhouse_invitation)" >Как попасть в Clubhouse?</a></li>
-      <li><a href="#functions" (click)="scrollToElement(functions)">Функционал</a></li>
-      <li><a href="#payment" (click)="scrollToElement(payment)">Регистрация</a></li>
+      <li><a (click)="scrollToElement(clubhouse_invitation)" >Как попасть в Clubhouse?</a></li>
+      <li><a (click)="scrollToElement(functions)">Функционал</a></li>
+      <li><a (click)="scrollToElement(payment)">Регистрация</a></li>
     </ul>
       <div class="burger">
           <div class="line1"></div>
@@ -26,7 +26,7 @@
       </div>
   </nav>
 
-  <section class="description" id="description">
+  <section #description class="description" id="description">
     <div class="description_text">
         <h1>
           Что такое ClubHouse?
@@ -50,14 +50,14 @@
   <section class="clubhouse_invitation" id="clubhouse_invitation">
       <h2 >Как попасть в Clubhouse?</h2>
     <p>
-      Главное условие: у вас должен быть iOS. Вероятно, если сервис крепко займёт своё место в мире соцсетей, то и для Android он станет доступен.
+      Главное условие: у Вас должен быть iOS. Вероятно, если сервис крепко займёт своё место в мире соцсетей, то и для Android он станет доступен.
 
-      Если главное условия выполнено, то можно переходить к следующему шагу. Тут есть два варианта:
+      Если главное условие выполнено, то можно переходить к следующему шагу. Тут есть два варианта:
     </p>
     <div class="clubhouse_invitation_dropdown">
       <div class="clubhouse_invitation_dropdown_1">
 <!--          зделай такой класс и сюда (click) перенеси-->
-          <div class="clubhouse_invitation_dropdown_1_header">
+          <div class="clubhouse_invitation_dropdown_1_header" [style]="showVariant1 ? '' : 'height: 50px'">
               <h3 (click)="showVariant1 = !showVariant1">
                   <a>Вариант 1:</a>
               </h3>
@@ -78,7 +78,7 @@
               </h3>
           </div>
         <div class="clubhouse_invitation_dropdown_1_p" [style]="showVariant2 ? '' : 'display: none'">
-          Зарегистрироваться в приложении и ждать, пока вас пустят. Но неизвестно, когда вы дождётесь, потому что платформа оставляет за собой возможность добавлять новых пользователей без ограничений по времени.
+          Зарегистрироваться в приложении и ждать, пока Вас пустят. Но неизвестно, когда вы дождётесь, потому что платформа оставляет за собой возможность добавлять новых пользователей без ограничений по времени.
         </div>
       </div>
     </div>
@@ -122,7 +122,7 @@
             accessibility
             </span>
         </div>
-        <div class="functions_wrap_card_text">Персонализация по интересам: алгоритмы определяют контент, который показывают вам по подпискам и по клубам, в которых состоите</div>
+        <div class="functions_wrap_card_text">Персонализация по интересам: алгоритмы определяют контент, который показывают Вам по подпискам и по клубам, в которых состоите</div>
       </div>
       <div class="functions_wrap_card">
         <div class="functions_wrap_card_logo">
@@ -130,7 +130,7 @@
 textsms
 </span>
         </div>
-        <div class="functions_wrap_card_text">приходят уведомления о начатых или запланированных беседах, в которых участвуют те, за кем вы следите</div>
+        <div class="functions_wrap_card_text">Приходят уведомления о начатых или запланированных беседах, в которых участвуют те, за кем Вы следите</div>
       </div>
 
       <div class="functions_wrap_card">
@@ -139,7 +139,7 @@ textsms
 textsms
 </span>
         </div>
-        <div class="functions_wrap_card_text">приходят уведомления о начатых или запланированных беседах, в которых участвуют те, за кем вы следите</div>
+        <div class="functions_wrap_card_text">Приходят уведомления о начатых или запланированных беседах, в которых участвуют те, за кем Вы следите</div>
       </div>
 
     </div>
@@ -152,7 +152,7 @@ textsms
       Главный вопрос:
     </h4>
     <p>
-      Стоит ли регистрироваться сейчас и ждать? Точно да, потому что вы забронируете имя пользователя. Это может быть актуально, если у вас есть личный бренд и имя пользователя, по которому вас все узнают, ведь если количество пользователей платформы разрастется, то ваше имя могут занять до того, как вы попадете в Clubhouse.
+      Стоит ли регистрироваться сейчас и ждать? Точно да, потому что Вы забронируете имя пользователя. Это может быть актуально, если у Вас есть личный бренд и имя пользователя, по которому Вас все узнают, ведь если количество пользователей платформы разрастется, то Ваше имя могут занять до того, как Вы попадете в Clubhouse.
 
       Мы создали сеть аккаунтов, связанных между собой и с помощью них высылаем приглашения всем желающим за сумму, гораздо более низкую, чем предлагают другие предприимчивые пользователи Ebay.
     </p>
@@ -225,21 +225,21 @@ nightlife
               <div class="payment_inputs">
                   <label for="acc_name">Имя Аккаунта</label>
                   <input formControlName="username" id="acc_name">
-                  <div *ngIf="form.get('username').invalid && form.get('username').touched">
+                  <div *ngIf="form.get('username')?.invalid && form.get('username')?.touched">
                       Укажите корректный никнейм. Используйте латиницу и цифры (от 5 символов)
                   </div>
               </div>
               <div class="payment_inputs">
                   <label for="tel_num">Номер телефона</label>
                   <input [textMask]="phoneMask" formControlName="phone" id="tel_num">
-                  <div *ngIf="form.get('phone').invalid && form.get('phone').touched">
+                  <div *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched">
                       Укажите корректный номер телефона
                   </div>
               </div>
                   <label for="agree">Даю согласие на обработку персональных данных</label>
                   <input type="checkbox" formControlName="agree" id="agree">
-                  <div *ngIf="form.get('agree').invalid && form.get('agree').touched">
-                      Необходимо ваше согласие на обработку персональных данных
+                  <div *ngIf="form.get('agree')?.invalid && form.get('agree')?.touched">
+                      Необходимо Ваше согласие на обработку персональных данных
                   </div>
 
               <button (click)="goToPayment()" [disabled]="form.invalid">
@@ -252,7 +252,7 @@ nightlife
 
   <div *ngIf="loading">Подождите, происходит запрос на получение реквизитов для оплаты. Обычно это занимает до минуты.</div>
   <div *ngIf="showRequisites">
-      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате {{code}}. После оплаты вам придёт СМС с кодом приглашения.
+      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате {{code}}. После оплаты Вам придёт СМС с кодом приглашения.
   </div>
 </body>
 </html>
