@@ -1,0 +1,444 @@
+$font-stack: 'Hind', sans-serif
+html
+    padding: 0
+    margin: 0
+    scroll-behavior: smooth
+    border: 0
+
+app-root
+    padding: 0
+    margin: 0
+    overflow-x: hidden
+
+*
+    box-sizing: border-box
+
+body
+    font-family: $font-stack
+    padding: 0
+    margin: 0!important
+    background-color: #E7E4D5
+    border: 0
+    overflow-x: auto
+    @media screen and (max-width: 1024px)
+        overflow-x: hidden
+
+
+.nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 2px solid #D2CEC6
+    padding: 20px
+    max-height: 10vh
+    &_p
+        font-size: 35px
+        font-family: $font-stack
+        color: #3A4072
+        font-weight: 600
+        text-decoration: none
+    &_links
+        list-style-type: none
+        display: flex
+        justify-content: space-around
+        align-items: center
+        width: 60%
+        @media screen and (max-width: 1024px)
+            width: 78%
+        @media screen and (max-width: 1021px)
+            display: none
+            position: absolute
+            right: 0
+            height: 92vh
+            top: 8vh
+            flex-direction: column
+            align-items: center
+            background-color: #5A739E
+            width: 100%
+            transform: translateX(100%)
+            transition: 0.4s ease-in
+            color: white
+        li
+            margin: 10px
+            @media screen and (max-width: 768px)
+                opacity: 0
+                z-index: 10
+                color: white
+            a
+                text-decoration: none
+                color: #3A4072
+                font-size: 15px
+                font-weight: 500
+                cursor: pointer
+                @media screen and (max-width: 768px)
+                    z-index: 11
+
+
+.burger
+    display: none
+    @media screen and (max-width: 768px)
+        display: block
+        cursor: pointer
+    div
+        width: 25px
+        height: 5px
+        background-color: white
+        margin: 5px
+        transition: 0.3s ease
+
+.description
+    display: flex
+    justify-content: space-around
+    align-items: center
+    width: 90%
+    margin: 0 auto
+    padding: 15px
+    background-color: white
+    margin-top: 20px
+    border-radius: 8px
+    @media screen and (max-width: 1024px)
+        flex-direction: column
+    &_text
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &_image
+        img
+            @media screen and (max-width: 1150px)
+                width: 80%
+                margin: 0 auto
+                display: flex
+                align-self: center
+
+
+.clubhouse_invitation
+    width: 90%
+    margin:  0 auto
+    padding: 15px
+    text-align: center
+    border-bottom: 2px solid #D2CEC6
+    &_dropdown
+        display: flex
+        justify-content: space-around
+        &_1
+            background: #5A739E
+            margin: 5px
+            width: 350px
+            margin: 0 auto
+            cursor: pointer
+            border-radius: 5px
+            z-index: 2
+            &_header
+                border-radius: 100px
+                color: #ffffff
+                font-weight: 100
+            h3
+                text-align: center
+                transition: 0.4s all
+                &:hover
+                    color: black
+            &_p
+                min-height: 340px
+                padding: 20px
+                border-radius: 5px
+                background: #FFFFFF
+                margin: 0 auto
+                font-size: 15px
+                z-index: 1
+
+.functions
+    width: 80%
+    margin: 0 auto
+    text-align: center
+    font-size: 28px
+    border-bottom: 2px solid #D2CEC6
+    padding: 15px
+    &_wrap
+        display: grid
+        grid-template-columns: repeat(2, 45%)
+        grid-column-gap: 10%
+        grid-row-gap: 50px
+        @media screen and (max-width: 1024px)
+            grid-template-columns: 1fr
+        &_card
+            display: flex
+            flex-direction: column
+            padding: 20px
+            justify-content: space-around
+            text-align: center
+            color: black
+            font-size: 15px
+            font-family: $font-stack
+            font-weight: 300
+            border-radius: 60px
+            background-color: white
+            margin: 10px
+            &_text
+                padding: 10px
+
+
+
+.register
+    width: 90%
+    margin: 0 auto
+    text-align: center
+    background-color: white
+    padding: 20px
+    border-radius: 10px
+    margin-top: 10px
+    border-bottom: 2px solid #E7E4D5
+    h4
+        font-size: 29px
+        font-weight: 600
+        color: #5A739E
+    &_fr
+        display: flex
+        justify-content: space-around
+        align-items: center
+        padding: 20px
+        @media screen and (max-width: 768px)
+            flex-direction: column
+            padding: 0
+        &_card
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-around
+            background-color: #E7E4D5
+            height: 300px
+            width: 50%
+            margin: 5px
+            @media screen and (max-width: 768px)
+                width: 90%
+    &_sr
+        display: flex
+        justify-content: space-around
+        align-items: center
+        padding: 20px
+        @media screen and (max-width: 768px)
+            flex-direction: column
+            padding: 0
+        &_card
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-around
+            background-color: #E7E4D5
+            height: 300px
+            width: 50%
+            margin: 5px
+            @media screen and (max-width: 768px)
+                width: 90%
+
+#pay_me
+    text-align: center
+    font-size: 29px
+    padding: 40px
+    .paymenter
+        padding: 20px
+        display: flex
+        width: 60%
+        margin: 0 auto
+        min-height: 400px
+        flex-direction: column
+        justify-content: space-evenly
+        background-color: #5A739E
+        border-radius: 50px
+        align-items: center
+        &_fr
+            display:  flex
+            align-items: center
+            justify-content: space-around
+            @media screen and (max-width: 768px)
+                justify-content: space-between
+                flex-direction: column
+            &_inputs
+                width: 100%
+                display: flex
+                justify-content: space-around
+                height: 120px
+                font-size: 15px
+                align-items: center
+                flex-direction: column
+                color: white
+                font-family: $font-stack
+                font-weight: 300
+                @media screen and (max-width: 768px)
+                    padding: 20px
+                #acc_name
+                    height: 150px
+                    @media screen and (max-width: 768px)
+                        height: 100px
+                        margin: 20px
+                input
+                    border-radius: 100px
+                    width: 100%
+                    height: 150px
+                    margin: 40px
+                    border: none
+    button
+        border: 3px solid #FFFFFF
+        width: 350px
+        border-radius: 100px
+        background-color: #5A739E
+        color: white
+        font-size: 24px
+        font-weight: normal
+        font-family: 'Montserrat', sans-serif
+        transition: 0.4s all
+        cursor: pointer
+        &:hover
+            background-color: white
+            color: black
+        @media screen and (max-width: 768px)
+            width: 150px
+            font-size: 15px
+        &_data
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            padding: 10px
+            font-size:  24px
+            font-weight: normal
+            color: white
+            font-family: 'Montserrat', sans-serif
+            @media screen and (max-width: 768px)
+                font-size: 11px
+
+.await
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: #5A739E
+    width: 400px
+    height: 500px
+    padding: 50px
+    color: white
+    font-size: 26px
+    font-family: 'Montserrat', sans-serif
+    border-radius: 50px
+    @media screen and (max-width: 768px)
+        width: 90%
+    @media screen and (max-width: 568px)
+        font-size: 17px
+    button
+        background-color: white
+        color: black
+        padding: 15px
+        border-radius: 100px
+        margin:  0 auto
+        display: flex
+        align-self: center
+        transition: 0.4s all
+        border: 0
+        cursor: pointer
+        outline: none
+        &:hover
+            background-color: #3A4072
+            color: white
+            font-weight: 600
+        &:active
+            transform: scale(0.9)
+
+.paymenter_data
+    font-size: 15px
+    color: white
+    label
+        padding: 15px
+        color: white
+
+.loader
+    border: 10px solid #f3f3f3
+    border-radius: 50%
+    border-top: 16px solid #3A4072
+    width: 40px
+    height: 40px
+    -webkit-animation: spin 2s linear infinite /* Safari */
+    animation: spin 2s linear infinite
+    padding: 20px
+    margin: 50px auto
+
+@-webkit-keyframes spin
+    0%
+        -webkit-transform: rotate(0deg)
+    100%
+        -webkit-transform: rotate(360deg)
+
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+.nav-active
+    transform: translateX(0%)
+
+footer
+    text-align: center
+    padding: 20px
+    background-color: #5A739E
+    color: white
+    p
+        font-size: 14px
+        font-family: 'Montserrat', sans-serif
+        font-weight: normal
+    .footer
+        width: 60%
+        margin: 0 auto
+        display: flex
+        justify-content: space-around
+        &_email
+            background-color: #3A4072
+            border-radius: 6px
+            padding-top: 10px
+            padding-bottom: 10px
+            width: 48%
+            cursor: pointer
+            transition: 0.4s all
+            &:hover
+                background-color: white
+                color: black
+            @media screen and (max-width: 768px)
+                font-size: 10px
+        &_num
+            background-color: #3A4072
+            border-radius: 6px
+            width: 48%
+            cursor: pointer
+            padding-top: 10px
+            padding-bottom: 10px
+            transition: 0.4s all
+            &:hover
+                background-color: white
+                color: black
+            @media screen and (max-width: 768px)
+                font-size: 10px
+
+
+@keyframes navLinkFade
+    0%
+        opacity: 0
+        transform: translateX(50px)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+.toggle .line1
+    transform: rotate(-45deg) translate(-5px, 6px)
+
+.toggle .line2
+    opacity: 0
+
+.toggle .line3
+    transform: rotate(45deg) translate(-5px, -6px)
+
+
+.validate
+    width: 40%
+    min-height: 0px
+    color: white
+    font-family: $font-stack
+    font-size: 8px
