@@ -3,6 +3,7 @@ html
   padding: 0
   margin: 0
   scroll-behavior: smooth
+  border: 0
 
 *
   box-sizing: border-box
@@ -12,6 +13,10 @@ body
   padding: 0
   margin: 0!important
   background-color: #E7E4D5
+  border: 0
+  overflow-x: auto
+  @media screen and (max-width: 1024px)
+      overflow-x: hidden
 
 
 .nav
@@ -31,6 +36,20 @@ body
     display: flex
     justify-content: space-around
     align-items: center
+    width: 60%
+    @media screen and (max-width: 1024px)
+        width: 78%
+    @media screen and (max-width: 768px)
+        position: absolute
+        right: 0
+        height: 100vh
+        top: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        background-color: #5A739E
+        width: 100%
+        transform: translateX(100%)
     li
       margin: 10px
       a
@@ -38,6 +57,17 @@ body
         color: #3A4072
         font-size: 15px
         font-weight: 500
+
+
+.burger
+    display: none
+    @media screen and (max-width: 1024px)
+        display: block
+    div
+        width: 25px
+        height: 5px
+        background-color: white
+        margin: 5px
 
 .description
   display: flex
@@ -49,11 +79,19 @@ body
   background-color: white
   margin-top: 20px
   border-radius: 8px
+  @media screen and (max-width: 1024px)
+      flex-direction: column
   &_text
       display: flex
       flex-direction: column
       justify-content: space-between
-
+  &_image
+      img
+          @media screen and (max-width: 1150px)
+              width: 80%
+              margin: 0 auto
+              display: flex
+              align-self: center
 
 
 .clubhouse_invitation
@@ -159,22 +197,29 @@ body
       width: 50%
       margin: 5px
 
-
-.payment
-  display: flex
-  flex-direction: column
-  width: 60%
-  margin: 0 auto
-  padding: 40px
-  height: 400px
-  justify-content: space-around
-  &_inputs
-    display: flex
-    justify-content: space-around
-    &_input
+#pay_me
+    text-align: center
+    font-size: 29px
+    padding: 40px
+    .payment
       display: flex
-      flex-direction: column
-      width: 50%
-      margin: 10px
-      padding: 15px
+      width: 60%
+      margin: 0 auto
+      padding: 40px
+      height: 400px
+      flex-direction: row
+      justify-content: space-around
+      background-color: #5A739E
+      border-radius: 50px
+      align-items: center
+      &_inputs
+        display: flex
+        justify-content: space-around
+        height: 80px
+        font-size: 15px
+        align-items: center
+        flex-direction: column
+        input
+            border-radius: 100px
+            width: 50%
 

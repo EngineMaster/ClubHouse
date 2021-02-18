@@ -7,7 +7,7 @@
   </head>
 <body>
   <nav class="nav">
-      <a href="/" class="nav_p">
+      <a href="#" class="nav_p">
 
         ClubHouse
       </a>
@@ -15,10 +15,15 @@
       <li><a href="#description">
         Что такое ClubHouse?
       </a></li>
-      <li><a href="#clubhouse_invitation" >Как попасть в Clubhouse?</a></li>
-      <li><a href="#functions">Функционал</a></li>
+      <li><a href="#clubhouse_invitation" (click)="scrollToElement(clubhouse_invitation)" >Как попасть в Clubhouse?</a></li>
+      <li><a href="#functions" (click)="scrollToElement(functions)">Функционал</a></li>
       <li><a href="#payment" (click)="scrollToElement(payment)">Регистрация</a></li>
     </ul>
+      <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div>
   </nav>
 
   <section class="description" id="description">
@@ -41,11 +46,11 @@
         <img src="https://sun9-29.userapi.com/impf/o3tRW1f4kk77-6tGLgERGcwfXWNTBto53jA87g/MNLQ1jTM4A0.jpg?size=750x511&quality=96&proxy=1&sign=6dcb248e847244a85cf3dd514a5c2dc6&type=album" alt="">
     </div>
   </section>
-
+<div #clubhouse_invitation>
   <section class="clubhouse_invitation" id="clubhouse_invitation">
       <h2 >Как попасть в Clubhouse?</h2>
     <p>
-      Главное условие: у вас должен быть iOS. Я думаю, что если сервис крепко займёт своё место в мире соцсетей, то и для Android он станет доступен.
+      Главное условие: у вас должен быть iOS. Вероятно, если сервис крепко займёт своё место в мире соцсетей, то и для Android он станет доступен.
 
       Если главное условия выполнено, то можно переходить к следующему шагу. Тут есть два варианта:
     </p>
@@ -78,8 +83,10 @@
       </div>
     </div>
   </section>
+</div>
 
 
+<div #functions>
   <section class="functions" id="functions">
     <h4>
       Функционал
@@ -137,6 +144,8 @@ textsms
 
     </div>
   </section>
+</div>
+
 
   <section class="register" id="register">
     <h4>
@@ -207,26 +216,31 @@ nightlife
   </section>
 
 
-  <div #payment>
+  <div #payment id="pay_me">
+      <h5> Укажите данные для регистрации </h5>
       <form [formGroup]="form">
+
           <section class="payment" *ngIf="!loading && !showRequisites">
-              <label for="acc_name">Имя Аккаунта</label>
-              <input formControlName="username" id="acc_name">
-              <div *ngIf="form.get('username').invalid && form.get('username').touched">
-                  Укажите корректный никнейм. Используйте латиницу и цифры (от 5 символов)
-              </div>
 
-              <label for="tel_num">Номер телефона</label>
-              <input [textMask]="phoneMask" formControlName="phone" id="tel_num">
-              <div *ngIf="form.get('phone').invalid && form.get('phone').touched">
-                  Укажите корректный номер телефона
+              <div class="payment_inputs">
+                  <label for="acc_name">Имя Аккаунта</label>
+                  <input formControlName="username" id="acc_name">
+                  <div *ngIf="form.get('username').invalid && form.get('username').touched">
+                      Укажите корректный никнейм. Используйте латиницу и цифры (от 5 символов)
+                  </div>
               </div>
-
-              <label for="agree">Даю согласие на обработку персональных данных</label>
-              <input type="checkbox" formControlName="agree" id="agree">
-              <div *ngIf="form.get('agree').invalid && form.get('agree').touched">
-                  Необходимо ваше согласие на обработку персональных данных
+              <div class="payment_inputs">
+                  <label for="tel_num">Номер телефона</label>
+                  <input [textMask]="phoneMask" formControlName="phone" id="tel_num">
+                  <div *ngIf="form.get('phone').invalid && form.get('phone').touched">
+                      Укажите корректный номер телефона
+                  </div>
               </div>
+                  <label for="agree">Даю согласие на обработку персональных данных</label>
+                  <input type="checkbox" formControlName="agree" id="agree">
+                  <div *ngIf="form.get('agree').invalid && form.get('agree').touched">
+                      Необходимо ваше согласие на обработку персональных данных
+                  </div>
 
               <button (click)="goToPayment()" [disabled]="form.invalid">
                   Перейти к оплате
