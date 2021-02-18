@@ -8,6 +8,7 @@ html
 app-root
     padding: 0
     margin: 0
+    overflow-x: hidden
 
 *
   box-sizing: border-box
@@ -44,28 +45,33 @@ body
     width: 60%
     @media screen and (max-width: 1024px)
         width: 78%
-    @media screen and (max-width: 768px)
+    @media screen and (max-width: 1021px)
+        display: none
         position: absolute
         right: 0
         height: 92vh
         top: 8vh
-        display: flex
         flex-direction: column
         align-items: center
         background-color: #5A739E
         width: 100%
         transform: translateX(100%)
         transition: 0.4s ease-in
+        color: white
     li
       margin: 10px
       @media screen and (max-width: 768px)
           opacity: 0
+          z-index: 10
+          color: white
       a
         text-decoration: none
         color: #3A4072
         font-size: 15px
         font-weight: 500
         cursor: pointer
+        @media screen and (max-width: 768px)
+            z-index: 11
 
 
 .burger
@@ -128,6 +134,9 @@ body
           font-weight: 100
       h3
         text-align: center
+        transition: 0.4s all
+        &:hover
+            color: black
       &_p
         min-height: 340px
         padding: 20px
@@ -177,6 +186,7 @@ body
   padding: 20px
   border-radius: 10px
   margin-top: 10px
+  border-bottom: 2px solid #E7E4D5
   h4
       font-size: 29px
       font-weight: 600
@@ -188,6 +198,7 @@ body
     padding: 20px
     @media screen and (max-width: 768px)
         flex-direction: column
+        padding: 0
     &_card
       display: flex
       flex-direction: column
@@ -206,6 +217,7 @@ body
     padding: 20px
     @media screen and (max-width: 768px)
         flex-direction: column
+        padding: 0
     &_card
       display: flex
       flex-direction: column
@@ -222,30 +234,188 @@ body
     text-align: center
     font-size: 29px
     padding: 40px
-    .payment
+    .paymenter
+      padding: 20px
       display: flex
       width: 60%
       margin: 0 auto
-      padding: 40px
-      height: 400px
-      flex-direction: row
-      justify-content: space-around
+      min-height: 400px
+      flex-direction: column
+      justify-content: space-evenly
       background-color: #5A739E
       border-radius: 50px
       align-items: center
-      &_inputs
+      &_fr
+          display:  flex
+          align-items: center
+          justify-content: space-around
+          @media screen and (max-width: 768px)
+             justify-content: space-between
+             flex-direction: column
+          &_inputs
+            width: 100%
+            display: flex
+            justify-content: space-around
+            height: 120px
+            font-size: 15px
+            align-items: center
+            flex-direction: column
+            color: white
+            font-family: $font-stack
+            font-weight: 300
+            @media screen and (max-width: 768px)
+                padding: 20px
+            #acc_name
+                height: 150px
+                @media screen and (max-width: 768px)
+                    height: 100px
+                    margin: 20px
+            input
+                border-radius: 100px
+                width: 100%
+                height: 150px
+                margin: 40px
+                border: none
+    button
+        border: 3px solid #FFFFFF
+        width: 350px
+        border-radius: 100px
+        background-color: #5A739E
+        color: white
+        font-size: 24px
+        font-weight: normal
+        font-family: 'Montserrat', sans-serif
+        transition: 0.4s all
+        cursor: pointer
+        &:hover
+            background-color: white
+            color: black
+        @media screen and (max-width: 768px)
+            width: 150px
+            font-size: 15px
+        &_data
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            padding: 10px
+            font-size:  24px
+            font-weight: normal
+            color: white
+            font-family: 'Montserrat', sans-serif
+            @media screen and (max-width: 768px)
+                font-size: 11px
+
+.await
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: #5A739E
+    width: 400px
+    height: 500px
+    padding: 50px
+    color: white
+    font-size: 26px
+    font-family: 'Montserrat', sans-serif
+    border-radius: 50px
+    @media screen and (max-width: 768px)
+        width: 90%
+    @media screen and (max-width: 568px)
+        font-size: 17px
+    button
+        background-color: white
+        color: black
+        padding: 15px
+        border-radius: 100px
+        margin:  0 auto
         display: flex
-        justify-content: space-around
-        height: 80px
-        font-size: 15px
-        align-items: center
-        flex-direction: column
-        input
-            border-radius: 100px
-            width: 50%
+        align-self: center
+        transition: 0.4s all
+        border: 0
+        cursor: pointer
+        outline: none
+        &:hover
+            background-color: #3A4072
+            color: white
+            font-weight: 600
+        &:active
+            transform: scale(0.9)
+
+.paymenter_data
+    font-size: 15px
+    color: white
+    label
+        padding: 15px
+        color: white
+
+.loader
+    border: 10px solid #f3f3f3
+    border-radius: 50%
+    border-top: 16px solid #3A4072
+    width: 40px
+    height: 40px
+    -webkit-animation: spin 2s linear infinite /* Safari */
+    animation: spin 2s linear infinite
+    padding: 20px
+    margin: 50px auto
+
+@-webkit-keyframes spin
+    0%
+        -webkit-transform: rotate(0deg)
+    100%
+        -webkit-transform: rotate(360deg)
+
+
+@keyframes spin
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
 
 .nav-active
     transform: translateX(0%)
+
+footer
+    text-align: center
+    padding: 20px
+    background-color: #5A739E
+    color: white
+    p
+        font-size: 14px
+        font-family: 'Montserrat', sans-serif
+        font-weight: normal
+    .footer
+        width: 60%
+        margin: 0 auto
+        display: flex
+        justify-content: space-around
+        &_email
+            background-color: #3A4072
+            border-radius: 6px
+            padding-top: 10px
+            padding-bottom: 10px
+            width: 48%
+            cursor: pointer
+            transition: 0.4s all
+            &:hover
+                background-color: white
+                color: black
+            @media screen and (max-width: 768px)
+                font-size: 10px
+        &_num
+            background-color: #3A4072
+            border-radius: 6px
+            width: 48%
+            cursor: pointer
+            padding-top: 10px
+            padding-bottom: 10px
+            transition: 0.4s all
+            &:hover
+                background-color: white
+                color: black
+            @media screen and (max-width: 768px)
+                font-size: 10px
 
 
 @keyframes navLinkFade
@@ -264,3 +434,11 @@ body
 
 .toggle .line3
     transform: rotate(45deg) translate(-5px, -6px)
+
+
+.validate
+    width: 40%
+    min-height: 0px
+    color: white
+    font-family: $font-stack
+    font-size: 8px

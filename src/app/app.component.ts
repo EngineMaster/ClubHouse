@@ -73,5 +73,9 @@ export class AppComponent {
         burger.classList.toggle('toggle');
     }
 
+    navSlider(): void{
+        this.navSlide();
+    }
+
 
 }

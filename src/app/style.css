@@ -1,3 +1,7 @@
 .nav-active{
     transform: translateX(0%);
 }
+
+body{
+    overflow-x: hidden;
+}

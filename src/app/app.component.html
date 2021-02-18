@@ -5,6 +5,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
   </head>
 <body>
   <nav class="nav">
@@ -20,7 +22,7 @@
       <li><a (click)="scrollToElement(functions)">Функционал</a></li>
       <li><a (click)="scrollToElement(payment)">Регистрация</a></li>
     </ul>
-      <div class="burger" (click)="navSlide()">
+      <div class="burger" (click)="navSlider()">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
@@ -217,44 +219,70 @@ nightlife
   </section>
 
 
-  <div #payment id="pay_me">
-      <h5> Укажите данные для регистрации </h5>
+  <section class="payment" #payment id="pay_me">
+
       <form [formGroup]="form">
-
-          <section class="payment" *ngIf="!loading && !showRequisites">
-
-              <div class="payment_inputs">
-                  <label for="acc_name">Имя Аккаунта</label>
+          <h5> Укажите данные для регистрации </h5>
+          <div class="paymenter" *ngIf="!loading && !showRequisites">
+            <div class="paymenter_fr">
+              <div class="paymenter_fr_inputs">
+                  <label for="acc_name">Ваш логин в Clubhouse:</label>
                   <input formControlName="username" id="acc_name">
-                  <div *ngIf="form.get('username')?.invalid && form.get('username')?.touched">
-                      Укажите корректный никнейм. Используйте латиницу и цифры (от 5 символов)
+                  <div *ngIf="form.get('username')?.invalid && form.get('username')?.touched" class="validate">
+                      Некорректный логин. Используйте латиницу & цифры
                   </div>
               </div>
-              <div class="payment_inputs">
+              <div class="paymenter_fr_inputs">
                   <label for="tel_num">Номер телефона</label>
                   <input [textMask]="phoneMask" formControlName="phone" id="tel_num">
-                  <div *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched">
+                  <div *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched" class="validate">
                       Укажите корректный номер телефона
                   </div>
               </div>
-                  <label for="agree">Даю согласие на обработку персональных данных</label>
-                  <input type="checkbox" formControlName="agree" id="agree">
-                  <div *ngIf="form.get('agree')?.invalid && form.get('agree')?.touched">
-                      Необходимо Ваше согласие на обработку персональных данных
-                  </div>
-
+            </div>
+                      <div class="paymenter_data">
+                          <label for="agree">Даю согласие на обработку персональных данных</label>
+                          <input type="checkbox" formControlName="agree" id="agree">
+                          <div *ngIf="form.get('agree')?.invalid && form.get('agree')?.touched">
+                              Необходимо Ваше согласие на обработку персональных данных
+                          </div>
+                      </div>
               <button (click)="goToPayment()" [disabled]="form.invalid">
                   Перейти к оплате
               </button>
-          </section>
+          </div>
       </form>
+  </section>
+
+
+  <div *ngIf="loading" class="await">Подождите, происходит запрос на получение реквизитов для оплаты. Обычно это занимает до минуты. <div class="loader"></div>
+  </div>
+  <div *ngIf="showRequisites" class="await">
+      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате "{{code}}" . После оплаты Вам придёт СМС с кодом приглашения. <div class="loader"></div>
+  <button>
+      Я оплатил
+  </button>
+
   </div>
 
 
-  <div *ngIf="loading">Подождите, происходит запрос на получение реквизитов для оплаты. Обычно это занимает до минуты.</div>
-  <div *ngIf="showRequisites">
-      Отправьте 49 руб. на кошелёк +7хххххххххх. Укажите в комментарии к оплате {{code}}. После оплаты Вам придёт СМС с кодом приглашения.
-  </div>
 
+
+<footer>
+    <p>
+    Данные для связи с поддержкой:
+    </p>
+    <div class="footer">
+        <div class="footer_email">
+            clubhouser@icloud.com
+        </div>
+        <div class="footer_num">
+            +1800082954
+        </div>
+        <div >
+
+        </div>
+    </div>
+</footer>
 </body>
 </html>
