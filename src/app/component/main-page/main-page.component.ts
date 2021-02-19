@@ -44,7 +44,7 @@ export class MainPageComponent {
         if (!control.value) {
             return null;
         }
-        const regexp = /^[A-Za-z0-9]{5,15}$/;
+        const regexp = /^[A-Za-z0-9]{2,15}$/;
         const isValid = regexp.test(control.value);
         return isValid ? null : { letter: 'Недопустимые символы. Пожалуйста, используйте английские буквы или цифры' };
     }
@@ -59,16 +59,21 @@ export class MainPageComponent {
     }
 
     navSlide(): void {
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav_links');
-        const navLinks = document.querySelector('.nav_links li');
+        const burger = document.querySelector('burger');
+        const nav = document.querySelector('nav_links');
+        const navLinks = document.querySelector('nav_links li');
 
+        // @ts-ignore
         burger.addEventListener('click', () => {
+            // @ts-ignore
             nav.classList.toggle('nav-active');
         });
+        // @ts-ignore
         Array.from(navLinks).forEach((link, index) => {
+            // @ts-ignore
             link.style.animation = `navLinksFade 0.5s ease forwards ${index / 7 + 0.5} s`;
         });
+        // @ts-ignore
         burger.classList.toggle('toggle');
     }
 
