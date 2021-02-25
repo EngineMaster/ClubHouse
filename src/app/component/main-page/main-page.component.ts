@@ -82,6 +82,6 @@ export class MainPageComponent {
     }
 
     goToPage(): void{
-        window.open('request/x54dfs456f5bf987', '_blank');
+        window.open('https://www.ct65621.tmweb.ru/request/x54dfs456f5bf987', '_blank');
     }
 }
